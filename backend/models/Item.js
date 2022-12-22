@@ -1,5 +1,3 @@
-import Placeholder from "./placeholder.png";
-
 var mongoose = require("mongoose");
 var uniqueValidator = require("mongoose-unique-validator");
 var slug = require("slug");
@@ -10,7 +8,7 @@ var ItemSchema = new mongoose.Schema(
     slug: { type: String, lowercase: true, unique: true },
     title: String,
     description: String,
-    image: {type: String, default: Placeholder},
+    image: {type: String, default: "./placeholder.png"},
     favoritesCount: { type: Number, default: 0 },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
     tagList: [{ type: String }],
